@@ -1,34 +1,48 @@
+import React,{useState} from 'react';
 import { ThemeProvider,createTheme } from '@material-ui/core/styles';
 import { CssBaseline } from '@material-ui/core';
 import './App.css';
 import { useStyles } from './styles';
-import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Navigation from './Components/Navigation';
-import Dashboard from './Page/Dashboard'
-import User from './Page/User'
-import Information from './Page/Crud'
-import Map from './Page/Map'
+import Profile from './Page/Profile';
+import Dashboard from './Page/Dashboard';
+import Sale from './Page/Sale';
+import Information from './Page/Crud';
+import Map from './Page/Map/Map';
+import clsx from 'clsx';
+import { CovidProvider } from './Provider/CovidProvider';
 
 
 const theme = createTheme();
 function App() {
+  const [open, setOpen] = useState(true)
   const classes = useStyles();
   return (
+    <CovidProvider>
     <ThemeProvider theme={theme}>
       <CssBaseline/>
-    <div>
-      <Router>
-        <Navigation />
+    <div className={classes.appRoot}>
+      <Router>   
+        <Navigation open={open} setOpen={setOpen} />
+       
+        <main className={clsx(classes.content, !open && classes.contentShift)}>
+        <div>
+        <div className={classes.toolbar} />
         <Switch>
-          <Route path="/" component={Dashboard} exact />
-          <Route path="/user" component={User} />
-          <Route path="/information" component={Information} />
+          <Route path="/" component={Profile} exact />
+          <Route path="/dashboard" component={Dashboard} />
+          <Route path="/sale" component={Sale} />
+          <Route path="/crud" component={Information} />
           <Route path="/map" component={Map} />
         </Switch>
+        </div>
+        </main>
+        
       </Router>
     </div>
     </ThemeProvider>
-
+    </CovidProvider>
   );
 }
 
