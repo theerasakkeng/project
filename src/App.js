@@ -7,11 +7,11 @@ import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Navigation from './Components/Navigation';
 import Profile from './Page/Profile';
 import Dashboard from './Page/Dashboard';
-import Sale from './Page/Sale';
+import Sale from './Page/Shop/Sale';
 import Information from './Page/Crud';
-import Map from './Page/Map/Map';
 import clsx from 'clsx';
 import { CovidProvider } from './Provider/CovidProvider';
+import MapView from './Page/Map/MapView';
 
 
 const theme = createTheme();
@@ -34,7 +34,7 @@ function App() {
           <Route path="/dashboard" component={Dashboard} />
           <Route path="/sale" component={Sale} />
           <Route path="/crud" component={Information} />
-          <Route path="/map" component={Map} />
+          <Route path="/map" component={MapView} />
         </Switch>
         </div>
         </main>

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Drawer, List, ListItem, ListItemText, Typography,IconButton } from '@material-ui/core'
 import CloseIcon from '@material-ui/icons/Close';
 import { useStyles } from '../../styles';
-import Close from '@material-ui/icons/Close';
+
 
 export default function DetailView(props) {
 

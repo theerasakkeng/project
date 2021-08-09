@@ -26,10 +26,10 @@ export const useStyles = makeStyles((theme) => ({
     borderRadius: 8,
     marginBottom: 8,
   },
-  route:{
-    textDecoration:"none",
+  route: {
+    textDecoration: "none",
     width: "80%",
-    border:0
+    border: 0
   },
   menuItemActive: {
     backgroundColor: "#b2b1b9"
@@ -82,7 +82,7 @@ export const useStyles = makeStyles((theme) => ({
       duration: theme.transitions.duration.enteringScreen,
     }),
   },
-  appBarmini:{
+  appBarmini: {
     width: `calc(100% - ${drawerMini}px)`,
     marginLeft: drawerMini
   },
@@ -110,19 +110,36 @@ export const useStyles = makeStyles((theme) => ({
       easing: theme.transitions.easing.easeOut,
       duration: theme.transitions.duration.enteringScreen,
     }),
-    marginLeft: -169 ,
+    marginLeft: -169,
   },
 
   //profile
-  //map
-  mapContainer:{
-    height:"80vh",
-    width:"90vw",
-    position:"absolute",
-    
+  card: {
+    height: "25vh",
   },
-  drawerDetail:{
-    width:300,
-  }
+  cardRoot: {
+    flexGrow: 1,
+  },
+  //map
+  mapContainer: {
+    height: "80vh",
+    width: "90vw",
+    position: "absolute",
 
+  },
+  drawerDetail: {
+    width: 300,
+  },
+  searchList: {
+      width: '100%',
+      height: 400,
+      maxWidth: 300,
+      backgroundColor: theme.palette.background.paper,
+  },
+
+  //Shop
+
+  root:{
+    flexGrow:1
+  },
 }));

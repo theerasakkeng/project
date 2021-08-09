@@ -15,7 +15,7 @@ export default function MenuItems() {
 
    return (
          <List style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-         <Link to="/" className={classes.route}>
+         <Link to="/" className={classes.route} >
          <ListItem button className={clsx(classes.menuItem, active && classes.menuItemActive)}>
                <ListItemIcon>
                   <AccountBoxIcon color="primary" />
